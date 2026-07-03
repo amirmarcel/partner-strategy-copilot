@@ -45,6 +45,9 @@ class TrackedGap(models.Model):
     status = models.CharField(
         max_length=16, choices=Status.choices, default=Status.NEW
     )
+    draft = models.TextField(blank=True, default="")
+    is_grounded = models.BooleanField(null=True, default=None)
+    groundedness_violations = models.JSONField(blank=True, default=list)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
