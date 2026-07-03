@@ -25,6 +25,7 @@ PROPERTY_MANAGER_BY_ACCOUNT = {
     "Nuveen — Affordable Housing Fund II": "Dana Okafor",
     "LaSalle — Value-Add Fund III": "Tomás Herrera",
     "Topview Investments": "Benjamin White",
+    "Beacon Capital — Core Fund": "Sarah Whitfield", 
 }
 
 
