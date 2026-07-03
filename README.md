@@ -1,7 +1,7 @@
 # Partner Strategy Workflow Copilot
 
 Internal tooling for the Partner Strategy team. Turns onboarding data-gap anomalies
-into routed, tracked, and drafted customer outreach so specialists spend less time
+into routed, tracked, and drafted customer outreach — so specialists spend less time
 triaging and chasing, and more time resolving.
 
 ## What it does
@@ -36,28 +36,72 @@ top, not a data-quality engine.
 
 Python · Django REST Framework · Celery · PostgreSQL · Claude
 
-Designed to run on AWS in future iterations: Celery on SQS, API and workers on Fargate, infrastructure via CDK.
+Designed to run on AWS: Celery on SQS, API and workers on Fargate, infrastructure via
+CDK. This prototype runs locally and calls Claude directly; the provider interface makes
+AWS Bedrock a clean production swap.
 
 ## Repository layout
 
 ```
 docs/            problem statement, architecture decisions
 AGENTS.md        rules and context for AI coding agents working in this repo
-src/             application code: routing, state, LLM provider interface
-tests/           unit tests for routing and state logic
-evaluations/     quality checks for LLM-generated drafts
+src/             Django project — gaps app (models, routing, drafting, guardrails, LLM provider)
+tests            unit tests for routing and state logic (src/gaps/tests.py)
+evaluations/     quality checks for LLM-generated drafts (see evaluations/README.md)
 golden_dataset/  labeled examples for evaluation
-observability/   per-run logs (model I/O, cost, latency)
+observability/   per-run eval logs (model I/O, cost, latency, scores)
 ```
 
 ## Getting started
 
-_[setup, running the API, running tests, running evals — fill in from what works]_
+Requires Python 3.11+.
+
+```bash
+# 1. Create and populate a virtual environment
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+
+# 2. Apply database migrations
+.venv/bin/python src/manage.py migrate
+
+# 3. Configure environment
+cp .env.example .env
+# then edit .env and add your ANTHROPIC_API_KEY
+```
+
+## Testing and evaluation
+
+The deterministic routing logic and the LLM drafting layer are verified separately,
+by design.
+
+**Unit tests** cover the deterministic spine (routing, owner assignment, severity
+normalization, and fail-loud behavior on unroutable anomalies):
+
+```bash
+.venv/bin/python src/manage.py test gaps
+```
+
+**Evaluations** score the non-deterministic drafting output against a labeled golden
+dataset across three dimensions — groundedness (deterministic), hallucination
+(heuristic), and tone (LM judge). Each run writes results to `observability/runs/`.
+Requires `ANTHROPIC_API_KEY` (makes live API calls):
+
+```bash
+.venv/bin/python evaluations/run_eval.py
+```
+
+See `evaluations/README.md` for what each dimension checks and its known limitations.
 
 ## Status
 
-Current: single gap type, missing-data-chase workflow, deterministic routing and
-tracking, LLM drafting with evaluation coverage.
+**Current (v1):** single gap type end to end — the missing-data-chase workflow.
+Deterministic routing and tracking (15 passing unit tests), LLM drafting behind a
+swappable provider interface, a deterministic groundedness guardrail, and a calibrated
+evaluation suite with per-run observability.
 
-Planned: SLA reminders and escalation, additional gap types, expanded workflow
-coverage, and a web frontend for specialists.
+**Immediate next:** the human-approval workflow (the tracked-gap state machine supports
+`drafted → approved → sent`; the approval action is the next piece to wire).
+
+**Planned:** SLA reminders and escalation, additional gap types, expanded workflow
+coverage, a web frontend for specialists, and AWS deployment (Bedrock, Fargate, CDK).
+
