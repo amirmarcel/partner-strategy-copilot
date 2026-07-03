@@ -1,5 +1,7 @@
 # Partner Strategy Workflow Copilot
 
+![CI](https://github.com/amirmarcel/partner-strategy-copilot/actions/workflows/ci.yml/badge.svg)
+
 Internal tooling for the Partner Strategy team. Turns onboarding data-gap anomalies
 into routed, tracked, and drafted customer outreach — so specialists spend less time
 triaging and chasing, and more time resolving.
@@ -91,6 +93,8 @@ Requires `ANTHROPIC_API_KEY` (makes live API calls):
 ```
 
 See `evaluations/README.md` for what each dimension checks and its known limitations.
+
+Tests run in CI on every push (see .github/workflows/ci.yml). Evaluations are run locally rather than gated in CI — they make live API calls and the tone dimension is a non-deterministic LM judge, so gating on them would make the pipeline flaky. Eval results are preserved in observability/runs/.
 
 ## Status
 
