@@ -34,10 +34,10 @@ top, not a data-quality engine.
 
 ## Stack
 
-Python · Django REST Framework · Celery · PostgreSQL · Claude
+Python · Django REST Framework · Claude
 
 Designed to run on AWS: Celery on SQS, API and workers on Fargate, infrastructure via
-CDK. This prototype runs locally and calls Claude directly; the provider interface makes
+CDK. This prototype runs locally with SQLite and calls Claude directly; the provider interface makes
 AWS Bedrock a clean production swap.
 
 ## Repository layout
