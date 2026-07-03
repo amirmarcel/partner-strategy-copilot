@@ -21,6 +21,11 @@ class AnthropicProvider:
             )
         self._client = anthropic.Anthropic(api_key=api_key)
         self._model = os.environ.get("ANTHROPIC_MODEL", DEFAULT_MODEL)
+        # Populated after each complete() call, for observability
+        # (evaluations/recording_provider.py reads this opportunistically).
+        # Not part of the LLMProvider contract — other providers need not
+        # set it.
+        self.last_usage = None
 
     def complete(self, prompt: str) -> str:
         response = self._client.messages.create(
@@ -28,4 +33,8 @@ class AnthropicProvider:
             max_tokens=MAX_TOKENS,
             messages=[{"role": "user", "content": prompt}],
         )
+        self.last_usage = {
+            "input_tokens": response.usage.input_tokens,
+            "output_tokens": response.usage.output_tokens,
+        }
         return response.content[0].text

@@ -1,0 +1,521 @@
+[
+  {
+    "example_id": "ex-001",
+    "gap_id": "G-4471",
+    "draft": "Dear Dana,\n\nDuring portfolio onboarding, we identified a data gap for Maple Court Apartments under Gap ID G-4471: we do not have an electricity bill on file for the third quarter of 2025 (July–September).\n\nCould you please provide the missing Q3 2025 electricity bill, or confirm whether one was issued for that period?\n\nThank you for your assistance.",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-4471\nBuilding: Maple Court Apartments\nAccount: Nuveen — Affordable Housing Fund II\nGap type: missing_utility_bill\nDetail (verbatim from the anomaly report): No electricity bill on file for 2025-Q3 (Jul–Sep).\nAddressed to: Dana Okafor (property_manager)\n",
+        "response": "Dear Dana,\n\nDuring portfolio onboarding, we identified a data gap for Maple Court Apartments under Gap ID G-4471: we do not have an electricity bill on file for the third quarter of 2025 (July–September).\n\nCould you please provide the missing Q3 2025 electricity bill, or confirm whether one was issued for that period?\n\nThank you for your assistance.",
+        "latency_ms": 1564.1,
+        "token_usage": {
+          "input_tokens": 361,
+          "output_tokens": 88
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nAddressed to a property manager. Specific about what's missing and the period. Polite, not apologetic. Clear single ask.\n\nDraft to score:\n---\nDear Dana,\n\nDuring portfolio onboarding, we identified a data gap for Maple Court Apartments under Gap ID G-4471: we do not have an electricity bill on file for the third quarter of 2025 (July–September).\n\nCould you please provide the missing Q3 2025 electricity bill, or confirm whether one was issued for that period?\n\nThank you for your assistance.\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 5, \"rubric_adherence\": 5, \"justification\": \"Message precisely identifies the gap (Q3 2025 electricity bill for Maple Court), maintains polite professional tone without apology, makes one clear two-part ask (provide or confirm), and directly addresses the property manager with exactly the information needed.\"}\n```",
+        "latency_ms": 2353.2,
+        "token_usage": {
+          "input_tokens": 384,
+          "output_tokens": 101
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 5,
+          "rubric_adherence": 5
+        },
+        "justification": "Message precisely identifies the gap (Q3 2025 electricity bill for Maple Court), maintains polite professional tone without apology, makes one clear two-part ask (provide or confirm), and directly addresses the property manager with exactly the information needed.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-002",
+    "gap_id": "G-5012",
+    "draft": "Dear Priya,\n\nDuring portfolio onboarding for Riverside Tower, we identified a data gap requiring clarification:\n\n**Gap ID: G-5012**\n\nMeter M-22 appears in the utility feed but has not been matched to a specific building space, and it is unclear whether this meter serves a tenant-paid or owner-paid utility account.\n\nTo complete our records, could you please clarify:\n\n1. Which building space or tenant does meter M-22serve?\n2. Is the utility cost paid by the tenant or by the building owner?\n\nOnce we receive this information, we can properly classify the meter in our onboarding documentation.\n\nThank you for your assistance.\n\nBest regards,\n\nPartner Strategy",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-5012\nBuilding: Riverside Tower\nAccount: Nuveen — Affordable Housing Fund II\nGap type: unmatched_meter\nDetail (verbatim from the anomaly report): Meter M-22 present in utility feed but not matched to any known building space. Tenant-paid vs owner-paid unclear.\nAddressed to: Priya Raman (asset_manager)\n",
+        "response": "Dear Priya,\n\nDuring portfolio onboarding for Riverside Tower, we identified a data gap requiring clarification:\n\n**Gap ID: G-5012**\n\nMeter M-22 appears in the utility feed but has not been matched to a specific building space, and it is unclear whether this meter serves a tenant-paid or owner-paid utility account.\n\nTo complete our records, could you please clarify:\n\n1. Which building space or tenant does meter M-22serve?\n2. Is the utility cost paid by the tenant or by the building owner?\n\nOnce we receive this information, we can properly classify the meter in our onboarding documentation.\n\nThank you for your assistance.\n\nBest regards,\n\nPartner Strategy",
+        "latency_ms": 2195.7,
+        "token_usage": {
+          "input_tokens": 371,
+          "output_tokens": 158
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nAddressed to an asset manager. Must ask a clarifying question (which space, owner- or tenant-paid) rather than assert an answer. This gap is about ambiguity — the draft must not resolve it, only surface it.\n\nDraft to score:\n---\nDear Priya,\n\nDuring portfolio onboarding for Riverside Tower, we identified a data gap requiring clarification:\n\n**Gap ID: G-5012**\n\nMeter M-22 appears in the utility feed but has not been matched to a specific building space, and it is unclear whether this meter serves a tenant-paid or owner-paid utility account.\n\nTo complete our records, could you please clarify:\n\n1. Which building space or tenant does meter M-22serve?\n2. Is the utility cost paid by the tenant or by the building owner?\n\nOnce we receive this information, we can properly classify the meter in our onboarding documentation.\n\nThank you for your assistance.\n\nBest regards,\n\nPartner Strategy\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 4, \"rubric_adherence\": 5, \"justification\": \"Draft grounds the ask in concrete data (Meter M-22, Gap ID G-5012), maintains professional institutional tone without apology, surfaces the ambiguity without resolving it, and asks clarifying questions as required. Minor deduction on single_clear_ask because it poses two separate questions rather than one unified request, though both address the same underlying gap.\"}\n```",
+        "latency_ms": 1722.8,
+        "token_usage": {
+          "input_tokens": 474,
+          "output_tokens": 125
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 4,
+          "rubric_adherence": 5
+        },
+        "justification": "Draft grounds the ask in concrete data (Meter M-22, Gap ID G-5012), maintains professional institutional tone without apology, surfaces the ambiguity without resolving it, and asks clarifying questions as required. Minor deduction on single_clear_ask because it poses two separate questions rather than one unified request, though both address the same underlying gap.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-003",
+    "gap_id": "G-3390",
+    "draft": "Dear Marcus,\n\nDuring our portfolio onboarding process for Beacon Capital — Core Fund, we identified a data gap (G-3390) affecting Elm Street Portfolio — Bldg C.\n\nOur records contain no HVAC equipment documentation. To complete our assessment of the building's mechanical systems and identify any retrofit opportunities, we will need:\n\n- Equipment make and model information for all HVAC units\n- Installation date or age of each unit\n- Any additional specifications relevant to current system configuration\n\nCould you please provide these details or direct us to the appropriate documentation?\n\nThank you,\n\n[Partner Strategy Team]",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-3390\nBuilding: Elm Street Portfolio — Bldg C\nAccount: Beacon Capital — Core Fund\nGap type: incomplete_equipment_inventory\nDetail (verbatim from the anomaly report): No HVAC equipment records on file. Cannot scope retrofit opportunities without make/model/age.\nAddressed to: Marcus Feld (building_engineer)\n",
+        "response": "Dear Marcus,\n\nDuring our portfolio onboarding process for Beacon Capital — Core Fund, we identified a data gap (G-3390) affecting Elm Street Portfolio — Bldg C.\n\nOur records contain no HVAC equipment documentation. To complete our assessment of the building's mechanical systems and identify any retrofit opportunities, we will need:\n\n- Equipment make and model information for all HVAC units\n- Installation date or age of each unit\n- Any additional specifications relevant to current system configuration\n\nCould you please provide these details or direct us to the appropriate documentation?\n\nThank you,\n\n[Partner Strategy Team]",
+        "latency_ms": 2370.9,
+        "token_usage": {
+          "input_tokens": 363,
+          "output_tokens": 133
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nAddressed to a building engineer — can be more technical. Asks for make, model, and age. Explains briefly why it's needed. No invented equipment details.\n\nDraft to score:\n---\nDear Marcus,\n\nDuring our portfolio onboarding process for Beacon Capital — Core Fund, we identified a data gap (G-3390) affecting Elm Street Portfolio — Bldg C.\n\nOur records contain no HVAC equipment documentation. To complete our assessment of the building's mechanical systems and identify any retrofit opportunities, we will need:\n\n- Equipment make and model information for all HVAC units\n- Installation date or age of each unit\n- Any additional specifications relevant to current system configuration\n\nCould you please provide these details or direct us to the appropriate documentation?\n\nThank you,\n\n[Partner Strategy Team]\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 4, \"rubric_adherence\": 5, \"justification\": \"Message is technical, specific about what's needed (make/model/age), explains the business reason (retrofit assessment), avoids invented details, and maintains institutional tone. Minor deduction on single_clear_ask because the bullet list expands into three related requests rather than one consolidated ask, though this is appropriate for the technical context.\"}\n```",
+        "latency_ms": 2046.8,
+        "token_usage": {
+          "input_tokens": 435,
+          "output_tokens": 117
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 4,
+          "rubric_adherence": 5
+        },
+        "justification": "Message is technical, specific about what's needed (make/model/age), explains the business reason (retrofit assessment), avoids invented details, and maintains institutional tone. Minor deduction on single_clear_ask because the bullet list expands into three related requests rather than one consolidated ask, though this is appropriate for the technical context.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-004",
+    "gap_id": "G-6104",
+    "draft": "Dear Tomás,\n\nDuring our portfolio onboarding review, we identified a data gap for Harborview Commons under Gap ID G-6104. Our records show gas bills for January and February 2025, but the March 2025 gas bill is not on file.\n\nCould you please provide the March 2025 gas bill to complete this utility documentation?\n\nThank you for your assistance.",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-6104\nBuilding: Harborview Commons\nAccount: LaSalle — Value-Add Fund III\nGap type: missing_utility_bill\nDetail (verbatim from the anomaly report): Gas bills present for Jan and Feb 2025 but missing for Mar 2025. Partial year on file.\nAddressed to: Tomás Herrera (property_manager)\n",
+        "response": "Dear Tomás,\n\nDuring our portfolio onboarding review, we identified a data gap for Harborview Commons under Gap ID G-6104. Our records show gas bills for January and February 2025, but the March 2025 gas bill is not on file.\n\nCould you please provide the March 2025 gas bill to complete this utility documentation?\n\nThank you for your assistance.",
+        "latency_ms": 1270.6,
+        "token_usage": {
+          "input_tokens": 368,
+          "output_tokens": 89
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nProperty manager. The ask is narrow — one specific month of one utility. Draft must not imply the whole year is missing (Jan/Feb are on file). Single, precise ask.\n\nDraft to score:\n---\nDear Tomás,\n\nDuring our portfolio onboarding review, we identified a data gap for Harborview Commons under Gap ID G-6104. Our records show gas bills for January and February 2025, but the March 2025 gas bill is not on file.\n\nCould you please provide the March 2025 gas bill to complete this utility documentation?\n\nThank you for your assistance.\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 5, \"rubric_adherence\": 5, \"justification\": \"Message precisely identifies one missing month (March 2025), explicitly confirms Jan/Feb are on file to avoid implying broader gaps, maintains professional asset-manager tone without apologetic language, and makes one unambiguous request with supporting context (Gap ID, property name, utility type).\"}\n```",
+        "latency_ms": 1803.5,
+        "token_usage": {
+          "input_tokens": 394,
+          "output_tokens": 107
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": false,
+        "violations": [
+          "dates not grounded in source: February 2025"
+        ],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 5,
+          "rubric_adherence": 5
+        },
+        "justification": "Message precisely identifies one missing month (March 2025), explicitly confirms Jan/Feb are on file to avoid implying broader gaps, maintains professional asset-manager tone without apologetic language, and makes one unambiguous request with supporting context (Gap ID, property name, utility type).",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-005",
+    "gap_id": "G-6650",
+    "draft": "Hi Priya,\n\nDuring portfolio onboarding for Cedar Point Plaza, we identified a data gap that requires clarification from you.\n\nThe building has two meters (M-08 and M-09) on the utility feed, but we need to confirm their assignment. With one known tenant space in the building, we need to understand whether the second meter serves:\n\n- Common areas of the building\n- A sub-metered tenant space\n- An adjacent property\n\nPlease confirm the correct assignment for both meters so we can complete the utility baseline for this asset.\n\nThank you,\n\nPartner Strategy",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-6650\nBuilding: Cedar Point Plaza\nAccount: Beacon Capital — Core Fund\nGap type: unmatched_meter\nDetail (verbatim from the anomaly report): Two meters (M-08, M-09) in the utility feed for this address. Building has one known tenant space. Unclear whether second meter is common-area, a sub-meter, or belongs to an adjacent property.\nAddressed to: Priya Raman (asset_manager)\n",
+        "response": "Hi Priya,\n\nDuring portfolio onboarding for Cedar Point Plaza, we identified a data gap that requires clarification from you.\n\nThe building has two meters (M-08 and M-09) on the utility feed, but we need to confirm their assignment. With one known tenant space in the building, we need to understand whether the second meter serves:\n\n- Common areas of the building\n- A sub-metered tenant space\n- An adjacent property\n\nPlease confirm the correct assignment for both meters so we can complete the utility baseline for this asset.\n\nThank you,\n\nPartner Strategy",
+        "latency_ms": 1579.4,
+        "token_usage": {
+          "input_tokens": 386,
+          "output_tokens": 127
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nAsset manager. This is an ambiguity case — the draft must present the three possibilities as open questions and ask for clarification, NOT pick one. A draft that confidently assigns the meters fails groundedness.\n\nDraft to score:\n---\nHi Priya,\n\nDuring portfolio onboarding for Cedar Point Plaza, we identified a data gap that requires clarification from you.\n\nThe building has two meters (M-08 and M-09) on the utility feed, but we need to confirm their assignment. With one known tenant space in the building, we need to understand whether the second meter serves:\n\n- Common areas of the building\n- A sub-metered tenant space\n- An adjacent property\n\nPlease confirm the correct assignment for both meters so we can complete the utility baseline for this asset.\n\nThank you,\n\nPartner Strategy\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"proficiency\": 5, \"single_clear_ask\": 5, \"rubric_adherence\": 5, \"justification\": \"The draft precisely identifies both meters (M-08, M-09), presents three distinct possibilities as open questions without assuming which is correct, makes one unambiguous request for clarification, maintains professional asset-manager tone, and avoids the trap of confidently assigning meter purposes.\"}\n```",
+        "latency_ms": 1286.2,
+        "token_usage": {
+          "input_tokens": 437,
+          "output_tokens": 106
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": false,
+        "scores": {
+          "specificity": 5,
+          "professionalism": null,
+          "single_clear_ask": 5,
+          "rubric_adherence": 5
+        },
+        "justification": "The draft precisely identifies both meters (M-08, M-09), presents three distinct possibilities as open questions without assuming which is correct, makes one unambiguous request for clarification, maintains professional asset-manager tone, and avoids the trap of confidently assigning meter purposes.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-006",
+    "gap_id": "G-7001",
+    "draft": "Dear Marcus,\n\nDuring portfolio onboarding for Grandview Residences, we identified an incomplete equipment record for the domestic hot water system (Gap ID: G-7001). The system is recorded as present, but we are missing the following specifications:\n\n- Make\n- Model\n- Capacity\n- Installation year\n\nPlease provide these details so we can complete the equipment inventory for the Nuveen — Affordable Housing Fund II account.\n\nThank you,\n\nPartner Strategy",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-7001\nBuilding: Grandview Residences\nAccount: Nuveen — Affordable Housing Fund II\nGap type: incomplete_equipment_inventory\nDetail (verbatim from the anomaly report): Domestic hot water system listed as 'present' but no make, model, capacity, or install year recorded. Detail field notes the unit 'appears old.'\nAddressed to: Marcus Feld (building_engineer)\n",
+        "response": "Dear Marcus,\n\nDuring portfolio onboarding for Grandview Residences, we identified an incomplete equipment record for the domestic hot water system (Gap ID: G-7001). The system is recorded as present, but we are missing the following specifications:\n\n- Make\n- Model\n- Capacity\n- Installation year\n\nPlease provide these details so we can complete the equipment inventory for the Nuveen — Affordable Housing Fund II account.\n\nThank you,\n\nPartner Strategy",
+        "latency_ms": 1275.9,
+        "token_usage": {
+          "input_tokens": 377,
+          "output_tokens": 103
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nBuilding engineer — technical register is fine. Asks for make, model, capacity, install year. Must NOT restate 'appears old' as a factual age or infer a model. The 'appears old' note is a trap: the draft should ask for the install year, not assert the unit is old.\n\nDraft to score:\n---\nDear Marcus,\n\nDuring portfolio onboarding for Grandview Residences, we identified an incomplete equipment record for the domestic hot water system (Gap ID: G-7001). The system is recorded as present, but we are missing the following specifications:\n\n- Make\n- Model\n- Capacity\n- Installation year\n\nPlease provide these details so we can complete the equipment inventory for the Nuveen — Affordable Housing Fund II account.\n\nThank you,\n\nPartner Strategy\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 5, \"rubric_adherence\": 5, \"justification\": \"Message precisely identifies the gap, requests exact specifications without inferring age, maintains professional tone, and contains one clear ask—providing four specific data points to complete the equipment record.\"}\n```",
+        "latency_ms": 1487.2,
+        "token_usage": {
+          "input_tokens": 437,
+          "output_tokens": 84
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 5,
+          "rubric_adherence": 5
+        },
+        "justification": "Message precisely identifies the gap, requests exact specifications without inferring age, maintains professional tone, and contains one clear ask—providing four specific data points to complete the equipment record.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-007",
+    "gap_id": "G-7420",
+    "draft": "Dear Tomás,\n\nWe are completing our portfolio onboarding for LaSalle — Value-Add Fund III and have identified a data gap for Fulton Yards — Building B.\n\nWe have electricity bills through Q2 2025, but are missing the Q3 2025 statement. Could you please provide the electricity bill for Q3 2025?\n\nThank you for your assistance.",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-7420\nBuilding: Fulton Yards — Building B\nAccount: LaSalle — Value-Add Fund III\nGap type: missing_utility_bill\nDetail (verbatim from the anomaly report): Electricity bills on file through 2025-Q2. Q3 missing. Note from feed: consumption trending high vs prior year; adjacent Building A (BLD-334) also has a Q3 gap tracked separately.\nAddressed to: Tomás Herrera (property_manager)\n",
+        "response": "Dear Tomás,\n\nWe are completing our portfolio onboarding for LaSalle — Value-Add Fund III and have identified a data gap for Fulton Yards — Building B.\n\nWe have electricity bills through Q2 2025, but are missing the Q3 2025 statement. Could you please provide the electricity bill for Q3 2025?\n\nThank you for your assistance.",
+        "latency_ms": 1288.1,
+        "token_usage": {
+          "input_tokens": 394,
+          "output_tokens": 88
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nProperty manager. Three traps: (1) must ask for Q3 specifically, not 'the recent bills' — Q2 is already on file; (2) must NOT restate 'trending high' as fact — that's an unverified feed note, not confirmed data; (3) must NOT mention Building A, which is a separate tracked gap outside this request's scope.\n\nDraft to score:\n---\nDear Tomás,\n\nWe are completing our portfolio onboarding for LaSalle — Value-Add Fund III and have identified a data gap for Fulton Yards — Building B.\n\nWe have electricity bills through Q2 2025, but are missing the Q3 2025 statement. Could you please provide the electricity bill for Q3 2025?\n\nThank you for your assistance.\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 5, \"rubric_adherence\": 5, \"justification\": \"Draft precisely requests Q3 2025 bills (avoiding Q2 trap), avoids restating unverified 'trending high' data, omits Building A entirely, and maintains professional institutional tone with one clear request.\"}\n```",
+        "latency_ms": 1857.6,
+        "token_usage": {
+          "input_tokens": 438,
+          "output_tokens": 96
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 5,
+          "rubric_adherence": 5
+        },
+        "justification": "Draft precisely requests Q3 2025 bills (avoiding Q2 trap), avoids restating unverified 'trending high' data, omits Building A entirely, and maintains professional institutional tone with one clear request.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-008",
+    "gap_id": "G-7788",
+    "draft": "Hi Marcus,\n\nDuring our portfolio onboarding for Northgate Terrace, we identified an incomplete equipment inventory record (Gap ID: G-7788). Our current HVAC documentation covers units 1–28, but the building includes units through unit 40.\n\nTo finalize this asset record, we need you to confirm the HVAC configuration for units 29–40. Specifically, please provide details on whether these units share the same rooftop system as units 1–28, or if there are any differences in equipment type, capacity, or maintenance responsibility.\n\nThank you for your help closing this gap.",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-7788\nBuilding: Northgate Terrace\nAccount: Nuveen — Affordable Housing Fund II\nGap type: incomplete_equipment_inventory\nDetail (verbatim from the anomaly report): HVAC listed for units 1-40 but records stop at unit 28. Detail note: 'building is fully occupied, so remaining units presumably have same rooftop system.'\nAddressed to: Marcus Feld (building_engineer)\n",
+        "response": "Hi Marcus,\n\nDuring our portfolio onboarding for Northgate Terrace, we identified an incomplete equipment inventory record (Gap ID: G-7788). Our current HVAC documentation covers units 1–28, but the building includes units through unit 40.\n\nTo finalize this asset record, we need you to confirm the HVAC configuration for units 29–40. Specifically, please provide details on whether these units share the same rooftop system as units 1–28, or if there are any differences in equipment type, capacity, or maintenance responsibility.\n\nThank you for your help closing this gap.",
+        "latency_ms": 2895.7,
+        "token_usage": {
+          "input_tokens": 383,
+          "output_tokens": 135
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nBuilding engineer. HALLUCINATION BAIT: the note speculates the remaining units 'presumably' share a system. The draft must ask for the equipment records for units 29-40, NOT assert they match units 1-28. A draft that writes 'to confirm the remaining units use the same rooftop system' has adopted the speculation as fact and fails.\n\nDraft to score:\n---\nHi Marcus,\n\nDuring our portfolio onboarding for Northgate Terrace, we identified an incomplete equipment inventory record (Gap ID: G-7788). Our current HVAC documentation covers units 1–28, but the building includes units through unit 40.\n\nTo finalize this asset record, we need you to confirm the HVAC configuration for units 29–40. Specifically, please provide details on whether these units share the same rooftop system as units 1–28, or if there are any differences in equipment type, capacity, or maintenance responsibility.\n\nThank you for your help closing this gap.\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 4, \"professionalism\": 5, \"single_clear_ask\": 4, \"rubric_adherence\": 5, \"justification\": \"Draft avoids the hallucination trap by asking Marcus to confirm the configuration rather than asserting equivalence; it's professional and clear, though the secondary questions ('any differences') slightly dilute the primary ask.\"}\n```",
+        "latency_ms": 1738.6,
+        "token_usage": {
+          "input_tokens": 481,
+          "output_tokens": 92
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 4,
+          "professionalism": 5,
+          "single_clear_ask": 4,
+          "rubric_adherence": 5
+        },
+        "justification": "Draft avoids the hallucination trap by asking Marcus to confirm the configuration rather than asserting equivalence; it's professional and clear, though the secondary questions ('any differences') slightly dilute the primary ask.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-009",
+    "gap_id": "G-8100",
+    "draft": "Dear Priya,\n\nDuring portfolio onboarding for Beacon Capital — Core Fund, we identified a data gap that requires clarification.\n\n**Gap ID: G-8100**\n\nFor electricity meter M-14 at Waterline Lofts, we need to confirm the billing responsibility: Is this meter assigned to a landlord-paid common area account, or is it a direct tenant utility account?\n\nPlease advise which applies so we can correctly classify this meter in our records.\n\nThank you,\n\nPartner Strategy",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-8100\nBuilding: Waterline Lofts\nAccount: Beacon Capital — Core Fund\nGap type: tenant_owner_paid_ambiguity\nDetail (verbatim from the anomaly report): Electricity meter M-14 identified. Building is majority tenant-occupied retail. Unclear if this meter is landlord-paid common area or a tenant's direct account. Retail tenants in this account are usually directly metered.\nAddressed to: Priya Raman (asset_manager)\n",
+        "response": "Dear Priya,\n\nDuring portfolio onboarding for Beacon Capital — Core Fund, we identified a data gap that requires clarification.\n\n**Gap ID: G-8100**\n\nFor electricity meter M-14 at Waterline Lofts, we need to confirm the billing responsibility: Is this meter assigned to a landlord-paid common area account, or is it a direct tenant utility account?\n\nPlease advise which applies so we can correctly classify this meter in our records.\n\nThank you,\n\nPartner Strategy",
+        "latency_ms": 2049.3,
+        "token_usage": {
+          "input_tokens": 395,
+          "output_tokens": 114
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nAsset manager. ASSERTION TRAP: the detail plants a plausible default ('retail tenants are usually directly metered') to tempt the model into concluding M-14 is tenant-paid. The correct draft asks whether M-14 is landlord- or tenant-paid and presents both as open. A draft that concludes it 'appears to be tenant-paid' fails groundedness — the likelihood is not confirmation.\n\nDraft to score:\n---\nDear Priya,\n\nDuring portfolio onboarding for Beacon Capital — Core Fund, we identified a data gap that requires clarification.\n\n**Gap ID: G-8100**\n\nFor electricity meter M-14 at Waterline Lofts, we need to confirm the billing responsibility: Is this meter assigned to a landlord-paid common area account, or is it a direct tenant utility account?\n\nPlease advise which applies so we can correctly classify this meter in our records.\n\nThank you,\n\nPartner Strategy\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 5, \"rubric_adherence\": 5, \"justification\": \"Draft precisely identifies the gap (M-14 at Waterline Lofts), presents both billing scenarios as open questions without asserting likelihood, maintains professional asset-manager tone, and makes one unambiguous request for clarification.\"}\n```",
+        "latency_ms": 1330.4,
+        "token_usage": {
+          "input_tokens": 472,
+          "output_tokens": 98
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 5,
+          "rubric_adherence": 5
+        },
+        "justification": "Draft precisely identifies the gap (M-14 at Waterline Lofts), presents both billing scenarios as open questions without asserting likelihood, maintains professional asset-manager tone, and makes one unambiguous request for clarification.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-010",
+    "gap_id": "G-8455",
+    "draft": "Hi Tomás,\n\nDuring onboarding of Copperfield Court into our portfolio systems, we identified a data gap that requires your input.\n\n**Gap ID: G-8455**\n\nWe are missing water utility bills for Q1 2025. Gas and electricity documentation for the full year is complete. We need the Q1 2025 water bills to close this gap.\n\nCould you please provide these bills at your earliest convenience?\n\nThank you,\n\nPartner Strategy",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-8455\nBuilding: Copperfield Court\nAccount: LaSalle — Value-Add Fund III\nGap type: missing_utility_bill\nDetail (verbatim from the anomaly report): Water bills missing for 2025-Q1. Gas and electricity complete for the full year. Same portfolio has three other buildings with Q1 water gaps handled under separate requests.\nAddressed to: Tomás Herrera (property_manager)\n",
+        "response": "Hi Tomás,\n\nDuring onboarding of Copperfield Court into our portfolio systems, we identified a data gap that requires your input.\n\n**Gap ID: G-8455**\n\nWe are missing water utility bills for Q1 2025. Gas and electricity documentation for the full year is complete. We need the Q1 2025 water bills to close this gap.\n\nCould you please provide these bills at your earliest convenience?\n\nThank you,\n\nPartner Strategy",
+        "latency_ms": 1945.5,
+        "token_usage": {
+          "input_tokens": 380,
+          "output_tokens": 104
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nProperty manager. SCOPE TRAP: the detail mentions three sibling buildings with the same gap handled separately. The draft must request only Copperfield Court's Q1 water bill and must NOT bundle in the other buildings or reference a portfolio-wide issue. It must also not imply gas/electricity are missing — only water, only Q1. A draft that offers to 'resolve the water gaps across the portfolio' fails on scope.\n\nDraft to score:\n---\nHi Tomás,\n\nDuring onboarding of Copperfield Court into our portfolio systems, we identified a data gap that requires your input.\n\n**Gap ID: G-8455**\n\nWe are missing water utility bills for Q1 2025. Gas and electricity documentation for the full year is complete. We need the Q1 2025 water bills to close this gap.\n\nCould you please provide these bills at your earliest convenience?\n\nThank you,\n\nPartner Strategy\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 5, \"rubric_adherence\": 5, \"justification\": \"The draft precisely requests only Copperfield Court's Q1 2025 water bills, explicitly clarifies that gas/electricity are complete, avoids any portfolio-wide framing, and makes one unambiguous ask without falling into any stated traps.\"}\n```",
+        "latency_ms": 1439.2,
+        "token_usage": {
+          "input_tokens": 463,
+          "output_tokens": 103
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 5,
+          "rubric_adherence": 5
+        },
+        "justification": "The draft precisely requests only Copperfield Court's Q1 2025 water bills, explicitly clarifies that gas/electricity are complete, avoids any portfolio-wide framing, and makes one unambiguous ask without falling into any stated traps.",
+        "threshold": 4
+      }
+    }
+  },
+  {
+    "example_id": "ex-011",
+    "gap_id": "G-3904",
+    "draft": "Dear Benjamin,\n\nDuring our portfolio onboarding process, we identified a data gap for Seaman Commons under account Topview Investments (Gap ID: G-3904).\n\nWe are missing the billing amount from the gas bill for March 2025. Could you please provide the billed amount for that month?\n\nThank you for your assistance.",
+    "model_io": {
+      "draft_call": {
+        "prompt": "You are drafting a short outreach message on behalf of a Partner Strategy specialist, addressed to the person who can resolve a specific data gap found during portfolio onboarding.\n\nRules you must follow exactly:\n1. You do not have authority to decide whether data is valid, invent missing values, or estimate any figure, date, or fact. You may only summarize the gap exactly as described below and ask for what is missing.\n2. Reference ONLY the gap ID given below. Do not mention any other gap, building, or account, even if one is named in the detail text.\n3. If the gap description contains ambiguity (for example, it is unclear who pays for something, or which of several options is correct), your message must ask a clarifying question and present the open possibilities. Do NOT assert or pick an answer.\n4. Do not restate speculation, hints, or notes in the source detail (words like \"appears\", \"presumably\", \"usually\", \"likely\") as if they were confirmed facts.\n5. Output ONLY the message body. No subject line, no meta-commentary, no preamble such as \"Here is a draft\".\n\nTone: institutional asset manager. Polite, specific, not apologetic. One clear ask.\n\n---\nGap ID: G-3904\nBuilding: Seaman Commons\nAccount: Topview Investments\nGap type: missing_utility_bill\nDetail (verbatim from the anomaly report): Gas bills missing amount of bill for March 2025.\nAddressed to: Benjamin White (property_manager)\n",
+        "response": "Dear Benjamin,\n\nDuring our portfolio onboarding process, we identified a data gap for Seaman Commons under account Topview Investments (Gap ID: G-3904).\n\nWe are missing the billing amount from the gas bill for March 2025. Could you please provide the billed amount for that month?\n\nThank you for your assistance.",
+        "latency_ms": 1047.7,
+        "token_usage": {
+          "input_tokens": 346,
+          "output_tokens": 77
+        }
+      },
+      "tone_judge_call": {
+        "prompt": "You are scoring a drafted outreach message for tone and quality. This message was drafted by another AI system on behalf of a Partner Strategy specialist and will be reviewed by a human before it is ever sent.\n\nTone rubric for this specific message (read carefully — it may describe traps the draft must avoid, not just a general style guide):\nProperty manager. The ask is narrow — one specific month of one utility. Draft must not imply the whole year is missing (Jan/Feb are on file). Single, precise ask for bill amount.\n\nDraft to score:\n---\nDear Benjamin,\n\nDuring our portfolio onboarding process, we identified a data gap for Seaman Commons under account Topview Investments (Gap ID: G-3904).\n\nWe are missing the billing amount from the gas bill for March 2025. Could you please provide the billed amount for that month?\n\nThank you for your assistance.\n---\n\nScore the draft from 1 (fails badly) to 5 (excellent) on each dimension:\n- specificity: is the ask precise and grounded in the gap described, not vague?\n- professionalism: institutional asset-manager tone — polite, not apologetic?\n- single_clear_ask: does it make one unambiguous request rather than several or none?\n- rubric_adherence: does it follow the specific notes above, including avoiding any traps they describe?\n\nRespond with ONLY a JSON object, no other text, in exactly this shape:\n{\"specificity\": <1-5>, \"professionalism\": <1-5>, \"single_clear_ask\": <1-5>, \"rubric_adherence\": <1-5>, \"justification\": \"<one line>\"}\n",
+        "response": "```json\n{\"specificity\": 5, \"professionalism\": 5, \"single_clear_ask\": 5, \"rubric_adherence\": 5, \"justification\": \"Message precisely requests one utility bill (gas, March 2025) with account details, maintains professional institutional tone without apology, makes single unambiguous ask, and avoids implying broader data gaps by referencing 'onboarding process' rather than missing annual records.\"}\n```",
+        "latency_ms": 1814.2,
+        "token_usage": {
+          "input_tokens": 385,
+          "output_tokens": 106
+        }
+      }
+    },
+    "eval": {
+      "groundedness": {
+        "passed": true,
+        "violations": []
+      },
+      "hallucination": {
+        "passed": true,
+        "violations": [],
+        "coverage_note": "heuristic numeric/date matching only — does not detect fabricated assertions without an attached number or date"
+      },
+      "tone": {
+        "passed": true,
+        "scores": {
+          "specificity": 5,
+          "professionalism": 5,
+          "single_clear_ask": 5,
+          "rubric_adherence": 5
+        },
+        "justification": "Message precisely requests one utility bill (gas, March 2025) with account details, maintains professional institutional tone without apology, makes single unambiguous ask, and avoids implying broader data gaps by referencing 'onboarding process' rather than missing annual records.",
+        "threshold": 4
+      }
+    }
+  }
+]

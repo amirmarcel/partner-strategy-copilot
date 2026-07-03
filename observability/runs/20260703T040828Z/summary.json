@@ -1,0 +1,12 @@
+{
+  "note": "starter eval harness — 11 examples, not production-scale",
+  "n_examples": 11,
+  "pass_rates": {
+    "groundedness": "6/11",
+    "hallucination": "9/11",
+    "tone": "11/11"
+  },
+  "overall_pass": "4/11",
+  "total_latency_ms": 39296.3,
+  "hallucination_eval_coverage_note": "heuristic numeric/date matching only — see evaluations/hallucination_eval.py docstring"
+}
