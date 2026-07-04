@@ -6,6 +6,8 @@ Internal tooling for the Partner Strategy team. Turns onboarding data-gap anomal
 into routed, tracked, and drafted customer outreach — so specialists spend less time
 triaging and chasing, and more time resolving.
 
+![Demo: ingest → draft → approve](docs/assets/demo.gif)
+
 ## What it does
 
 During portfolio onboarding, the platform flags data gaps (missing utility bills,
