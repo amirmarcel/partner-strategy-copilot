@@ -28,7 +28,7 @@ Specialist minutes per resolved gap, and share of gaps resolved within the 30-da
 Before: manual triage + drafting + spreadsheet tracking. After: review-and-approve.
 
 ## Boundary (what this is NOT)
-This does not detect, validate, or estimate data — the company's product already does that,
-and it is their core advantage. This tool operates strictly downstream of an
+This does not detect, validate, or estimate data — the company's product already does
+that, and it is their core advantage. This tool operates strictly downstream of an
 already-produced anomaly report. It is internal leverage for the team, not a product
 feature.
