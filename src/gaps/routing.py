@@ -22,10 +22,10 @@ ASSET_MANAGER_NAME = "Priya Raman"
 BUILDING_ENGINEER_NAME = "Marcus Feld"
 
 PROPERTY_MANAGER_BY_ACCOUNT = {
-    "Nuveen — Affordable Housing Fund II": "Dana Okafor",
-    "LaSalle — Value-Add Fund III": "Tomás Herrera",
+    "Northwind — Affordable Housing Fund II": "Dana Okafor",
+    "Crestline — Value-Add Fund III": "Tomás Herrera",
     "Topview Investments": "Benjamin White",
-    "Beacon Capital — Core Fund": "Sarah Whitfield", 
+    "Harborstone Capital — Core Fund": "Sarah Whitfield", 
 }
 
 
