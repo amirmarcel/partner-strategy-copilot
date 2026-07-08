@@ -3,7 +3,7 @@
 ![CI](https://github.com/amirmarcel/partner-strategy-copilot/actions/workflows/ci.yml/badge.svg)
 
 Internal tooling for the Partner Strategy team. Turns onboarding data-gap anomalies
-into routed, tracked, and drafted customer outreach — so specialists spend less time
+into routed, tracked, and drafted customer outreach so specialists spend less time
 triaging and chasing, and more time resolving.
 
 ![Demo: ingest → draft → approve](docs/assets/demo.gif)
@@ -11,7 +11,7 @@ triaging and chasing, and more time resolving.
 ## What it does
 
 During portfolio onboarding, the platform flags data gaps (missing utility bills,
-unmatched meters, incomplete equipment inventory). This tool takes that anomaly report
+unmatched meters, incomplete equipment inventory). This Partner Strategy Workflow Copilot tool takes that anomaly report
 and, for each gap:
 
 - routes it to the right building, account, owner, and severity

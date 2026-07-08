@@ -6,3 +6,4 @@ venv/
 .DS_Store
 *.log
 *.sqlite3
+observability/runs/
