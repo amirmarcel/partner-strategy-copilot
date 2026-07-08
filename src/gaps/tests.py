@@ -16,7 +16,7 @@ def load_examples():
 
 
 def make_anomaly(**overrides):
-    """A minimal valid anomaly dict (missing_utility_bill / Nuveen), for
+    """A minimal valid anomaly dict (missing_utility_bill / Northwind), for
     tests that isolate one field at a time rather than using a full
     dataset record.
     """
@@ -24,7 +24,7 @@ def make_anomaly(**overrides):
         "gap_id": "G-0000",
         "building": "Test Building",
         "building_id": "BLD-000",
-        "account": "Nuveen — Affordable Housing Fund II",
+        "account": "Northwind — Affordable Housing Fund II",
         "gap_type": "missing_utility_bill",
         "detail": "Test detail.",
         "severity": "high",
@@ -91,10 +91,10 @@ class OwnerAssignmentTests(SimpleTestCase):
 
     def test_property_manager_name_resolves_by_account(self):
         cases = {
-            "Nuveen — Affordable Housing Fund II": "Dana Okafor",
-            "LaSalle — Value-Add Fund III": "Tomás Herrera",
+            "Northwind — Affordable Housing Fund II": "Dana Okafor",
+            "Crestline — Value-Add Fund III": "Tomás Herrera",
             "Topview Investments": "Benjamin White",
-            "Beacon Capital — Core Fund": "Sarah Whitfield",
+            "Harborstone Capital — Core Fund": "Sarah Whitfield",
         }
         for account, expected_name in cases.items():
             with self.subTest(account=account):
