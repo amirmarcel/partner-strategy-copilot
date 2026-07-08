@@ -3,7 +3,7 @@
 ![CI](https://github.com/amirmarcel/partner-strategy-copilot/actions/workflows/ci.yml/badge.svg)
 
 Internal tooling for the Partner Strategy team. Turns onboarding data-gap anomalies
-into routed, tracked, and drafted customer outreach — so specialists spend less time
+into routed, tracked, and drafted customer outreach so specialists spend less time
 triaging and chasing, and more time resolving.
 
 ![Demo: ingest → draft → approve](docs/assets/demo.gif)
