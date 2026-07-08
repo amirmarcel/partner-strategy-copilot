@@ -101,13 +101,15 @@ Tests run in CI on every push (see .github/workflows/ci.yml). Evaluations are ru
 ## Status
 
 **Current (v1):** single gap type end to end — the missing-data-chase workflow.
-Deterministic routing and tracking (28 passing unit tests), LLM drafting behind a
-swappable provider interface, a deterministic groundedness guardrail, and a calibrated
-evaluation suite with per-run observability.
+Deterministic routing and tracking, LLM drafting behind a swappable provider interface,
+a deterministic groundedness guardrail, the approval action (`POST /gaps/{id}/approve/`
+transitions `drafted → approved` behind a guarded state machine), and a calibrated
+evaluation suite with per-run observability — all covered by 28 passing tests.
 
-**Immediate next:** the human-approval workflow (the tracked-gap state machine supports
-`drafted → approved → sent`; the approval action is the next piece to wire).
+**Immediate next:** the human-facing review workflow — a specialist-facing interface to
+read, edit, and approve drafts. The approval action and state machine already exist;
+this is the UI layer on top.
 
 **Planned:** SLA reminders and escalation, additional gap types, expanded workflow
-coverage, a web frontend for specialists, and AWS deployment (Bedrock, Fargate, CDK).
+coverage, and AWS deployment (Bedrock, Fargate, CDK).
 
