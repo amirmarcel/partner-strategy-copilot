@@ -11,7 +11,7 @@ triaging and chasing, and more time resolving.
 ## What it does
 
 During portfolio onboarding, the platform flags data gaps (missing utility bills,
-unmatched meters, incomplete equipment inventory). This tool takes that anomaly report
+unmatched meters, incomplete equipment inventory). This Partner Strategy Workflow Copilot tool takes that anomaly report
 and, for each gap:
 
 - routes it to the right building, account, owner, and severity
