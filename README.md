@@ -38,7 +38,7 @@ top, not a data-quality engine.
 
 ## Stack
 
-Python · Django REST Framework · Claude
+Python · Django REST Framework · Claude API
 
 Designed to run on AWS: Celery on SQS, API and workers on Fargate, infrastructure via
 CDK. This prototype runs locally with SQLite and calls Claude directly; the provider interface makes
@@ -101,7 +101,7 @@ Tests run in CI on every push (see .github/workflows/ci.yml). Evaluations are ru
 ## Status
 
 **Current (v1):** single gap type end to end — the missing-data-chase workflow.
-Deterministic routing and tracking (15 passing unit tests), LLM drafting behind a
+Deterministic routing and tracking (28 passing unit tests), LLM drafting behind a
 swappable provider interface, a deterministic groundedness guardrail, and a calibrated
 evaluation suite with per-run observability.
 
