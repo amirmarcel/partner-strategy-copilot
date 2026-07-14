@@ -1,7 +1,7 @@
 """Deterministic routing: raw anomaly -> tracked gap record.
 
 No LLM or model I/O here — pure functions over plain dicts, so this is
-cheaply unit-testable in isolation (tests land in the next session).
+cheaply unit-testable in isolation.
 """
 
 from .models import TrackedGap
@@ -65,9 +65,8 @@ def route_anomaly(anomaly: dict) -> dict:
     golden_dataset/examples.jsonl) into a tracked gap record, ready to
     create a TrackedGap. Owner is assigned from the roster tables above;
     severity is normalized from the input, not inferred — the free-text
-    detail field doesn't reliably determine urgency (see routing session
-    notes), so we trust the upstream signal and fail loudly if it's absent
-    or invalid rather than guess.
+    detail field doesn't reliably determine urgency, so we trust the 
+    upstream signal and fail loudly if it's absent or invalid rather than guess.
     """
     gap_type = anomaly["gap_type"]
     account = anomaly["account"]
