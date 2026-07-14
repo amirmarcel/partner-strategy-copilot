@@ -103,8 +103,7 @@ Tests run in CI on every push (see .github/workflows/ci.yml). Evaluations are ru
 **Current (v1):** single gap type end to end — the missing-data-chase workflow.
 Deterministic routing and tracking, LLM drafting behind a swappable provider interface,
 a deterministic groundedness guardrail, the approval action (`POST /gaps/{id}/approve/`
-transitions `drafted → approved` behind a guarded state machine), and a calibrated
-evaluation suite with per-run observability — all covered by 28 passing tests.
+transitions `drafted → approved` behind a guarded state machine), and a starter evaluation suite with per-run observability — all covered by 28 passing tests.
 
 **Immediate next:** the human-facing review workflow — a specialist-facing interface to
 read, edit, and approve drafts. The approval action and state machine already exist;
